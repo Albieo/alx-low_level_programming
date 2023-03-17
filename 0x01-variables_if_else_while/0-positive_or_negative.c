@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - functions at the start of code 
+ * main - functions at the start of code
  *
  * Return: Always 0
  *
