@@ -5,6 +5,9 @@
  * init_dog - initizes struct to name, age and onwer
  *
  * @d: pointer to struct
+ * @name: first member
+ * @age: second member
+ * @owner: third member
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
