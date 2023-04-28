@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 
-	array = char *main;
+	array = (char *)main;
 
 	for (j = 0; j < i; j++)
 	{
