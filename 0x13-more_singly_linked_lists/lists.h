@@ -1,7 +1,8 @@
-#include <stddef.h>
-#include <stdlib.h>
 #ifndef LISTS_H
 #define LISTS_H
+
+#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * struct sllist - linked list definition
@@ -13,7 +14,7 @@ typedef struct sllist
 {
 	int n;
 	struct sllist *next;
-}listint_t;
+} listint_t;
 
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
