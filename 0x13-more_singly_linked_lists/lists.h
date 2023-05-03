@@ -1,15 +1,17 @@
+#include <stddef.h>
+
 #ifndef LISTS_H
 #define LISTS_H
 
 /**
  * struct sllist - linked list definition
  *
- * @num: number added to the linked list
+ * @n: number added to the linked list
  * @next: pointer to the next node
  */
 typedef struct sllist
 {
-	int num;
+	int n;
 	struct sllist *next;
 }listint_t;
 
