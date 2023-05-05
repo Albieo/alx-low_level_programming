@@ -8,7 +8,7 @@
  *
  * Return: 1 (Sucessful), -1 (Error)
  */
-int chear_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
 	if (index >= 62)
 	{
