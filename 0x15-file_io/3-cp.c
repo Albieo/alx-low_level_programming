@@ -3,7 +3,7 @@
 #include "main.h"
 
 void close_file(int file_d);
-char *create_file(char *file0);
+char *create_new_file(char *file0);
 
 /**
  * main - copies the content of a file to another file.
@@ -20,10 +20,10 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to %s\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	buf = create_file(arv[2]);
+	buf = create_new_file(argv[2]);
 	from = open(argv[1], O_RDONLY);
 	r = read(from, buf, buf_size);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -68,7 +68,7 @@ void close_file(int file_d)
 	i = close(file_d);
 	if (i == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_d);
 		exit(100);
 	}
 }
@@ -78,7 +78,7 @@ void close_file(int file_d)
  * 
  * @file0: The file buffer storage pointer.
 */
-char *create_file(char *file0)
+char *create_new_file(char *file0)
 {
 	char *buf;
 	int buf_size = 1024;
