@@ -74,9 +74,11 @@ void close_file(int file_d)
 }
 
 /**
- * create_file - gives bytes to file buffer
- * 
+ * create_new_file - gives bytes to file buffer
+ *
  * @file0: The file buffer storage pointer.
+ *
+ * Return: Address to new buffer
 */
 char *create_new_file(char *file0)
 {
