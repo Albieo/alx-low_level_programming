@@ -8,14 +8,14 @@
  *
  * Return: 1 (Sucessful), -1 (Error)
  */
-int clear_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int idx)
 {
-	if (index >= 62)
+	if (idx >= 62)
 	{
 		return (-1);
 	}
 
-	*n = (~(1UL << index) & *n);
+	*n = (~(1UL << idx) & *n);
 
 	return (1);
 }
