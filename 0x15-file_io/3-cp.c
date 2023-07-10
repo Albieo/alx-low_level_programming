@@ -6,6 +6,46 @@ void close_file(int file_d);
 char *create_new_file(char *file0);
 
 /**
+ * close_file - closes file descriptors
+ *
+ * @file_d: The file descriptors passed to function
+*/
+void close_file(int file_d)
+{
+	int i;
+
+	i = close(file_d);
+	if (i == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_d);
+		exit(100);
+	}
+}
+
+/**
+ * create_new_file - gives bytes to file buffer
+ *
+ * @file0: The file buffer storage pointer.
+ *
+ * Return: Address to new buffer
+*/
+char *create_new_file(char *file0)
+{
+	char *buf;
+	int buf_size = 1024;
+
+	buf = malloc(buf_size * sizeof(char));
+
+	if (buf == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read to %s\n", file0);
+		exit(99);
+	}
+
+	return (buf);
+}
+
+/**
  * main - copies the content of a file to another file.
  *
  * @argc: number of argument in the program.
@@ -54,44 +94,4 @@ int main(int argc, char *argv[])
 	close_file(to);
 
 	return (0);
-}
-
-/**
- * close_file - closes file descriptors
- *
- * @file_d: The file descriptors passed to function
-*/
-void close_file(int file_d)
-{
-	int i;
-
-	i = close(file_d);
-	if (i == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_d);
-		exit(100);
-	}
-}
-
-/**
- * create_new_file - gives bytes to file buffer
- *
- * @file0: The file buffer storage pointer.
- *
- * Return: Address to new buffer
-*/
-char *create_new_file(char *file0)
-{
-	char *buf;
-	int buf_size = 1024;
-
-	buf = malloc(buf_size * sizeof(char));
-
-	if (buf == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read to %s\n", file0);
-		exit(99);
-	}
-
-	return (buf);
 }
