@@ -128,7 +128,7 @@ void print_osabi(Elf64_Ehdr h)
 
 /**
  * print_osabi_more - prints ELF osabi more.
- * @ the elf header struct.
+ * @h: the elf header struct.
 */
 void print_osabi_more(Elf64_Ehdr h)
 {
