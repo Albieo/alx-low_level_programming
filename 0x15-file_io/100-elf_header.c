@@ -243,7 +243,7 @@ void print_entry(Elf64_Ehdr h)
  * main - main program
  * @ac: argument count
  * @av: argument array
- * 
+ *
  * Return: 1 (Success) 0 (Error)
 */
 int main(int ac, char **av)
