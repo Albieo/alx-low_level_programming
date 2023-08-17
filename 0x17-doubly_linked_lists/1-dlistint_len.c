@@ -4,7 +4,7 @@
  * dlistint_len - number of elements in a linked list
  * @h: head of linked list
  *
- * Returns: the number of elements, 0 if empty
+ * Return: the number of elements, 0 if empty
 */
 size_t dlistint_len(const dlistint_t *h)
 {
