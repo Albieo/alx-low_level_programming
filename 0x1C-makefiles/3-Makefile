@@ -4,15 +4,15 @@ SRC = main.c school.c
 
 OBJ = $(SRC:.c=.o)
 
-EXECUTABLE = school
+NAME = school
 
 RM = rm -f
 
 all: $(OBJ)
-	$(CC) $(OBJ) -o $(EXECUTABLE)
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *~ $(EXECUTABLE)
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
